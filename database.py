@@ -3,6 +3,17 @@ from sqlmodel import SQLModel, Session, create_engine, Field
 from typing import Annotated
 from fastapi import FastAPI,Depends
 
+class User(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    name: str
+    email: str
+
+# Definición del modelo Product
+class Product(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    name: str
+    price: float
+
 rds_connection_string = "postgresql+psycopg2://postgres:Uide.asu.123@database-api.cd428eek4eh8.us-east-2.rds.amazonaws.com:5532/database-api"
 engine = create_engine(rds_connection_string, echo=True)
 
