@@ -14,7 +14,7 @@ class Product(SQLModel, table=True):
     name: str
     price: float
 
-rds_connection_string = "postgresql+psycopg2://postgres:Uide.asu.123@database-api.cd428eek4eh8.us-east-2.rds.amazonaws.com:5532/database-api"
+rds_connection_string = "postgresql+psycopg2://guillo:Guillo2006@database-api.cd428eek4eh8.us-east-2.rds.amazonaws.com:5532/postgres"
 engine = create_engine(rds_connection_string, echo=True)
 
 def create_all_tables(app: FastAPI):
